@@ -2,3 +2,6 @@
 terraform.tfstate*
 output
 kubeconfig_*
+
+metrics-server-*
+*.tar.gz
