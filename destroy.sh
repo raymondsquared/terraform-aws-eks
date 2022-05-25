@@ -1,0 +1,6 @@
+#!/bin/bash
+
+AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID_PAW \
+AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY_PAW \
+AWS_DEFAULT_REGION="ap-southeast-2" \
+terraform destroy
