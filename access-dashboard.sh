@@ -2,7 +2,11 @@
 
 # REF: https://github.com/kubernetes/dashboard/blob/master/docs/user/accessing-dashboard/README.md
 
-# kubectl get deployment -n kubernates-dashboard
+# kubectl get deployment -n kubernetes-dashboard
+
+# kubectl \
+# get service \
+# --all-namespaces
 
 ############
 
