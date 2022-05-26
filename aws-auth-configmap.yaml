@@ -1,0 +1,26 @@
+apiVersion: v1
+data:
+  mapAccounts: |
+    []
+  mapRoles: |
+    - "groups":
+      - "system:bootstrappers"
+      - "system:nodes"
+      "rolearn": "arn:aws:iam::583774007388:role/education-eks-2ERcg1zW2022052601480867970000000e"
+      "username": "system:node:{{EC2PrivateDNSName}}"
+  mapUsers: |
+    - userarn: arn:aws:iam::583774007388:user/paw-infrastructure-user
+      username: paw-infrastructure-user
+      groups:
+      - system:masters
+      - eks-console-dashboard-full-access-group
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2022-05-26T01:48:15Z"
+  labels:
+    app.kubernetes.io/managed-by: Terraform
+    terraform.io/module: terraform-aws-modules.eks.aws
+  name: aws-auth
+  namespace: kube-system
+  resourceVersion: "762"
+  uid: c8970d4a-8cee-426c-8617-7c983bca41e6

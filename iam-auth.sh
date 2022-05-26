@@ -23,7 +23,7 @@
 #     - system:bootstrappers
 #     - system:nodes
 # 
-#  To allow superuser access for performing any action on any resource, add system:master
+#  To allow superuser access for performing any action on any resource, add system:masters
 
 # Step 3.
 # kubectl apply -f eks-console-full-access.yaml
@@ -49,7 +49,11 @@
 #     - system:nodes
 #     - eks-console-dashboard-full-access-group
 
-# Step 5.
+# Step 5. Better way, copy and edit locally
+# kubectl -n kube-system get configmap aws-auth -o yaml > aws-auth-configmap.yaml
+# kubectl apply -f aws-auth-configmap.yaml -n kube-system
+
+# Step 6.
 # 
 # Check roles
 # 
