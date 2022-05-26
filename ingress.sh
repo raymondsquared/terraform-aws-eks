@@ -52,15 +52,25 @@
 # ingress-nginx ingress-nginx/ingress-nginx \
 # --namespace ingress-nginx --create-namespace
 # helm uninstall ingress-nginx --namespace ingress-nginx
+
+# helm upgrade --install \
+# apache bitnami/apache \
+# --namespace paw --create-namespace
+# helm uninstall apache --namespace paw
   
-# helm list -a
+# helm list ---all-namespaces
 
 # kubectl create deployment app --image=httpd --port=80 --namespace paw
 # kubectl delete deployment app --namespace paw
-
 # Expose as cluster IP
 # kubectl expose deployment app --namespace paw
 # kubectl delete services app --namespace paw
+# OR
+# helm install \
+# app \
+# --set service.type=ClusterIP \
+# bitnami/nginx --namespace paw
+# helm uninstall app --namespace paw
 
 # kubectl create ingress app-ingress \
 #   --class=nginx  \
@@ -75,4 +85,5 @@
 
 # kubectl get ingress -A
 # kubectl describe ingress app-ingress --namespace paw
+# kubectl logs ingress-nginx-controller-7bcc67477b-2rdkj -n ingress-nginx
 # kubectl delete ingress app-ingress --namespace paw

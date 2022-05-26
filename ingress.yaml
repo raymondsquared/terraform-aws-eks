@@ -13,6 +13,9 @@ spec:
           pathType: Prefix
           backend:
             service:
-              name: app
+              # with helm chart
+              name: app-nginx
+              # with deployment
+              # name: app
               port:
                 number: 80
